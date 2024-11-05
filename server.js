@@ -7,7 +7,7 @@ const profile=require('./controllers/profile')
 const image=require('./controllers/image')
 
 //密碼雜湊
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 
 //連結database使用Knex.js
 const knex = require('knex')
