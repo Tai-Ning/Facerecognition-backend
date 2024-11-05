@@ -28,7 +28,14 @@ const db = knex({
 
 //避免遇到Cors
 const cors =require('cors')
-app.use(cors())
+// app.use(cors())
+const corsOptions = {
+    origin: 'https://facerecognition-ay0j.onrender.com', // 前端URL
+    methods: ['GET', 'POST', 'PUT'],
+    allowedHeaders: ['Content-Type']
+}
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions))
 app.use(express.urlencoded({extended:false}))
 app.use(express.json())
 
