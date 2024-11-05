@@ -24,7 +24,6 @@ const db = knex({
     // database: process.env.DATABASE_DB ,
   },
 })
-db.select('*').from("users").then()
 
 
 //避免遇到Cors
