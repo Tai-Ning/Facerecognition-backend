@@ -17,18 +17,9 @@ const db = knex({
     connection: {
     connectionString:'postgresql://smart_brain_cmm0_user:4CMD6OigQ97uChoOBZhYo0ndgpZza7KG@dpg-csksmbl6l47c73botggg-a.oregon-postgres.render.com/smart_brain_cmm0',    
     ssl:{ rejectUnauthorized: false } 
-    // host: process.env.DATABASE_HOST,
-    // port: 5432,
-    // user: process.env.DATABASE_USER,
-    // password: process.env.DATABASE_PW ,
-    // database: process.env.DATABASE_DB ,
   }
 })
 
-//測試資料庫連線
-db.raw('select 1+1 as result')
-  .then(() => console.log('Database connected successfully'))
-  .catch(err => console.error('Database connection failed', err))
 
 //避免遇到Cors
 const cors =require('cors')
@@ -42,17 +33,11 @@ app.get('/',(req,res)=>{
     res.send('success')
 })
 
-
-
 //singin req=>POST res=>success or faail
 app.post('/signin',(req,res)=>{signin.handleSignin(req,res,bcrypt,db)})
 
 //register req=>POST user
-app.post('/register',(req,res)=>{
-    //測試req.body
-    console.log('Signin request body:', req.body)
-    register.handleRegister(req,res,db,bcrypt)
-})
+app.post('/register',(req,res)=>{register.handleRegister(req,res,db,bcrypt)})
 
 //profile/:userId req=>GET user
 app.get('/profile/:id',(req,res,)=>{profile.handleProfileGet(req,res,db)})
