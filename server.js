@@ -36,6 +36,7 @@ app.use(express.json())
 //route contorller
 app.get('/',(req,res)=>{
     res.send('success')
+    console.log(db)
 })
 
 //singin req=>POST res=>success or faail
