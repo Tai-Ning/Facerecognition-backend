@@ -11,7 +11,7 @@ if(!name || !email || !password){
 //此處雜湊密碼為了方便使用sync方式
     const hash=bcrypt.hashSync(password,10)
     //測試
-    onsole.log('Hashed password:', hash)
+    console.log('Hashed password:', hash)
     //將資料更新回傳到login和users table中
     db.transaction(trx=>{
         trx.insert({
