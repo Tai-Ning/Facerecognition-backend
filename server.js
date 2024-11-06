@@ -15,7 +15,7 @@ const knex = require('knex')
 const db = knex({
     client: 'pg',
     connection: {
-    connectionString:process.env.DATABASE_URL,    
+    connectionString:'postgresql://smart_brain_cmm0_user:4CMD6OigQ97uChoOBZhYo0ndgpZza7KG@dpg-csksmbl6l47c73botggg-a.oregon-postgres.render.com/smart_brain_cmm0',    
     ssl:{ rejectUnauthorized: false } 
     // host: process.env.DATABASE_HOST,
     // port: 5432,
