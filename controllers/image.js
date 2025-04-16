@@ -1,6 +1,6 @@
 //使用Clarifai API
 const  setupClarifai = (imageUrl) => {
-    const PAT = '29d31e02f14f463fbf72159df0ad078b'
+    const PAT = process.env.CLARIFAI_API_KEY;
     const USER_ID = 'm92li301e7uq'    
     const APP_ID = 'facerecognitionbrain'
     // const MODEL_ID = 'face-detection' 
